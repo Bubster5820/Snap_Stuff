@@ -1,0 +1,670 @@
+<snapdata><project name='Pong Thingy' app='Snap! 5.1, http://snap.berkeley.edu' version='1'>
+  <notes>Muh Pong</notes>
+  <thumbnail>data:image/png;base64,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</thumbnail>
+  <stage inheritance='true' id='1' volume='100' height='360' tempo='60' lines='round' width='480' sublistIDs='false' name='Stage' threadsafe='false' codify='false' color='255,255,255,1' scheduled='false' pan='0' ternary='false' costume='1'>
+    <pentrails>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAFoCAYAAACPNyggAAAW5klEQVR4Xu3aMY4s13kF4KpY2oA2QPQEBLgAGZgBGNCRtABJjuRE3oATBky0AiZSJEsbYCQFDBqwFkCAwTS4AW1AjstoeVKPuqsa89/7n+/F3XXv+U41DgZ46+IfAQJTCvx2O52vF//P9fI8ZQCXJhAusIbnF58AAQIECJQIGOASdocSIECAQLqAAU5/A+QnQIAAgRIBA1zC7lACBAgQSBcwwOlvgPwECBAgUCJggEvYHUrguMBp++n1f0Fvl/WvL8ef5gkECHy0gAH+aHHnEXiQwNP2L9v1Ua/rf/sdP8jUYwh8pIAf7kdqO4vAAwUM8AMxPYpAgYABLkB3JIFHCBjgRyh6BoE6AQNcZ+9kAocEDPAhPl8mUC5ggMsrcAEC+wQM8D433yIwioABHqUJ9yBwp4ABvhPMxwkMJmCAByvEdQjcKmCAb5XyOQJjChjgMXtxKwL/VMAA/1MiHyAwtIABHroelyPw/wsYYG8HgbkFDPDc/bl9sIABDi5f9BYCBrhFjUIkChjgxNZl7iRggDu1KUuUgAGOqlvYhgIGuGGpImUIGOCMnqXsK2CA+3YrWXMBA9y8YPHaCxjg9hUL2FXAAHdtVq4UAQOc0rSc7QQMcLtKBQoTMMBhhYvbR8AA9+lSkkwBA5zZu9QNBAxwgxJFiBYwwNH1Cz+zgAGeuT13J7AsBthbQGBSAQM8aXGuTeBNwAB7FQhMKnDafnq+Xv2y/vV50giuTSBawABH1y88AQIECFQJGOAqeecSIECAQLSAAY6uX3gCBAgQqBIwwFXyziVAgACBaAEDHF2/8AQIECBQJWCAq+SdS+CgwGn75rws23ZZf/5y8FG+ToBAgYABLkB3JIFHCDxt32zX57yuP/M7fgSoZxD4YAE/3A8GdxyBRwkY4EdJeg6BGgEDXOPuVAKHBQzwYUIPIFAqYIBL+R1OYL+AAd5v55sERhAwwCO04A4EdggY4B1ovkJgIAEDPFAZrkLgHgEDfI+WzxIYT8AAj9eJGxG4ScAA38TkQwSGFTDAw1bjYgTeFzDA3hACcwsY4Ln7c/tgAQMcXL7oLQQMcIsahUgUMMCJrcvcScAAd2pTligBAxxVt7ANBQxww1JFyhAwwBk9S9lXwAD37Vay5gIGuHnB4rUXMMDtKxawq4AB7tqsXCkCBjilaTnbCRjgdpUKFCZggMMKF7ePgAHu06UkmQIGOLN3qRsIGOAGJYoQLWCAo+sXfmYBAzxze+5OYFkMsLeAwKQCBnjS4lybwJuAAfYqEJhUwABPWpxrEzDA3gECcwuctm/O1wSX9WfPcydxewKZAv4CzuxdagIECBAoFjDAxQU4ngABAgQyBQxwZu9SEyBAgECxgAEuLsDxBAgQIJApYIAze5eaAAECBIoFDHBxAY4nsFfg9MN2/V/Q2+WT9WXvM3yPAIE6AQNcZ+9kAocEnn7YtusDXj9Z/Y4PSfoygRoBP9wad6cSOCxggA8TegCBUgEDXMrvcAL7BQzwfjvfJDCCgAEeoQV3ILBDwADvQPMVAgMJGOCBynAVAvcIGOB7tHyWwHgCBni8TtyIwE0CBvgmJh8iMKyAAR62Ghcj8L6AAfaGEJhbwADP3Z/bBwsY4ODyRW8hYIBb1ChEooABTmxd5k4CBrhTm7JECRjgqLqFbShggBuWKlKGgAHO6FnKvgIGuG+3kjUXMMDNCxavvYABbl+xgF0FDHDXZuVKETDAKU3L2U7AALerVKAwAQMcVri4fQQMcJ8uJckUMMCZvUvdQMAANyhRhGgBAxxdv/AzCxjgmdtzdwLLYoC9BQQmFTDAkxbn2gTeBAywV4HApAIGeNLiXJuAAfYOEJhbwADP3Z/bE/AXsHeAwKQCpx+28/Xql0/W50kjuDaBaAEDHF2/8AQIECBQJWCAq+SdS4AAAQLRAgY4un7hCRAgQKBKwABXyTuXAAECBKIFDHB0/cITIECAQJWAAa6Sdy6BgwKnX//jf0Fvl9+vLwcf5esECBQIGOACdEcSeITA079v2/U5r79b/Y4fAeoZBD5YwA/3g8EdR+BRAgb4UZKeQ6BGwADXuDuVwGEBA3yY0AMIlAoY4FJ+hxPYL2CA99v5JoERBAzwCC24A4EdAgZ4B5qvEBhIwAAPVIarELhHwADfo+WzBMYTMMDjdeJGBG4SMMA3MfkQgWEFDPCw1bgYgfcFDLA3hMDcAgZ47v7cPljAAAeXL3oLAQPcokYhEgUMcGLrMncSMMCd2pQlSsAAR9UtbEMBA9ywVJEyBAxwRs9S9hUwwH27lay5gAFuXrB47QUMcPuKBewqYIC7NitXioABTmlaznYCBrhdpQKFCRjgsMLF7SNggPt0KUmmgAHO7F3qBgIGuEGJIkQLGODo+oWfWcAAz9yeuxNYFgPsLSAwqYABnrQ41ybwJmCAvQoEJhUwwJMW59oEDLB3gMDcAqdfb+drgsvv1+e5k7g9gUwBfwFn9i41AQIECBQLGODiAhxPgAABApkCBjizd6kJECBAoFjAABcX4HgCBAgQyBQwwJm9S02AAAECxQIGuLgAxxPYK/Cr03Zel2X7w2V92fsM3yNAoE7AANfZO5nAIYF/e9q26wP+8Lr6HR+S9GUCNQJ+uDXuTiVwWMAAHyb0AAKlAga4lN/hBPYLGOD9dr5JYAQBAzxCC+5AYIeAAd6B5isEBhIwwAOV4SoE7hEwwPdo+SyB8QQM8HiduBGBmwQM8E1MPkRgWAEDPGw1LkbgfQED7A0hMLeAAZ67P7cPFjDAweWL3kLAALeoUYhEAQOc2LrMnQQMcKc2ZYkSMMBRdQvbUMAANyxVpAwBA5zRs5R9BQxw324lay5ggJsXLF57AQPcvmIBuwoY4K7NypUiYIBTmpaznYABblepQGECBjiscHH7CBjgPl1KkilggDN7l7qBgAFuUKII0QIGOLp+4WcWMMAzt+fuBJbFAHsLCEwqYIAnLc61CbwJGGCvAoFJBQzwpMW5NgED7B0gMLeAAZ67P7cn4C9g7wCBSQV+ddrO16v/12V9njSCaxOIFjDA0fULT4AAAQJVAga4St65BAgQIBAtYICj6xeeAAECBKoEDHCVvHMJECBAIFrAAEfXLzwBAgQIVAkY4Cp55xI4KPD9//0v6O3Ty/py8FG+ToBAgYABLkB3JIFHCHz/tG3X53z6uvodPwLUMwh8sIAf7geDO47AowQM8KMkPYdAjYABrnF3KoHDAgb4MKEHECgVMMCl/A4nsF/AAO+3800CIwgY4BFacAcCOwQM8A40XyEwkIABHqgMVyFwj4ABvkfLZwmMJ2CAx+vEjQjcJGCAb2LyIQLDChjgYatxMQLvCxhgbwiBuQUM8Nz9uX2wgAEOLl/0FgIGuEWNQiQKGODE1mXuJGCAO7UpS5SAAY6qW9iGAga4YakiZQgY4IyepewrYID7ditZcwED3Lxg8doLGOD2FQvYVcAAd21WrhQBA5zStJztBAxwu0oFChMwwGGFi9tHwAD36VKSTAEDnNm71A0EDHCDEkWIFjDA0fULP7OAAZ65PXcnsCwG2FtAYFIBAzxpca5N4E3AAHsVCEwqYIAnLc61CRhg7wCBuQW+P23na4JPL+vz3EncnkCmgL+AM3uXmgABAgSKBQxwcQGOJ0CAAIFMAQOc2bvUBAgQIFAsYICLC3A8AQIECGQKGODM3qUmQIAAgWIBA1xcgOMJ7BXYTn8+L8u6rZcvXvY+w/cIEKgTMMB19k4mcEhge/rLdn3A+vqF3/EhSV8mUCPgh1vj7lQChwUM8GFCDyBQKmCAS/kdTmC/gAHeb+ebBEYQMMAjtOAOBHYIGOAdaL5CYCABAzxQGa5C4B4BA3yPls8SGE/AAI/XiRsRuEnAAN/E5EMEhhUwwMNW42IE3hcwwN4QAnMLGOC5+3P7YAEDHFy+6C0EDHCLGoVIFDDAia3L3EnAAHdqU5YoAQMcVbewDQUMcMNSRcoQMMAZPUvZV8AA9+1WsuYCBrh5weK1FzDA7SsWsKuAAe7arFwpAgY4pWk52wkY4HaVChQmYIDDChe3j4AB7tOlJJkCBjizd6kbCBjgBiWKEC1ggKPrF35mAQM8c3vuTmBZDLC3gMCkAgZ40uJcm8CbgAH2KhCYVMAAT1qcaxMwwN4BAnMLGOC5+3N7Av4C9g4QmFRgO/35fL36evnX50kjuDaBaAEDHF2/8AQIECBQJWCAq+SdS4AAAQLRAgY4un7hCRAgQKBKwABXyTuXAAECBKIFDHB0/cITIECAQJWAAa6Sdy6BgwLb6fPr/4Le1su3Lwcf5esECBQIGOACdEcSeITA9vT5dn3O+vqt3/EjQD2DwAcL+OF+MLjjCDxKwAA/StJzCNQIGOAad6cSOCxggA8TegCBUgEDXMrvcAL7BQzwfjvfJDCCgAEeoQV3ILBDwADvQPMVAgMJGOCBynAVAvcIGOB7tHyWwHgCBni8TtyIwE0CBvgmJh8iMKyAAR62Ghcj8L6AAfaGEJhbwADP3Z/bBwsY4ODyRW8hYIBb1ChEooABTmxd5k4CBrhTm7JECRjgqLqFbShggBuWKlKGgAHO6FnKvgIGuG+3kjUXMMDNCxavvYABbl+xgF0FDHDXZuVKETDAKU3L2U7AALerVKAwAQMcVri4fQQMcJ8uJckUMMCZvUvdQMAANyhRhGgBAxxdv/AzCxjgmdtzdwLLYoC9BQQmFTDAkxbn2gTeBAywV4HApAIGeNLiXJuAAfYOEJhbYDt9fr4mWC/fPs+dxO0JZAr4Czizd6kJECBAoFjAABcX4HgCBAgQyBQwwJm9S02AAAECxQIGuLgAxxMgQIBApoABzuxdagIECBAoFjDAxQU4nsBege2r0/V/QW/rl5eXvc/wPQIE6gQMcJ29kwkcEti+etquD1i/fPU7PiTpywRqBPxwa9ydSuCwgAE+TOgBBEoFDHApv8MJ7BcwwPvtfJPACAIGeIQW3IHADgEDvAPNVwgMJGCAByrDVQjcI2CA79HyWQLjCRjg8TpxIwI3CRjgm5h8iMCwAgZ42GpcjMD7AgbYG0JgbgEDPHd/bh8sYICDyxe9hYABblGjEIkCBjixdZk7CRjgTm3KEiVggKPqFrahgAFuWKpIGQIGOKNnKfsKGOC+3UrWXMAANy9YvPYCBrh9xQJ2FTDAXZuVK0XAAKc0LWc7AQPcrlKBwgQMcFjh4vYRMMB9upQkU8AAZ/YudQMBA9ygRBGiBQxwdP3CzyxggGduz90JLIsB9hYQmFTAAE9anGsTeBMwwF4FApMKGOBJi3NtAgbYO0BgbgEDPHd/bk/AX8DeAQKTCmxfnc7Xq69fXp4njeDaBKIFDHB0/cITIECAQJWAAa6Sdy4BAgQIRAsY4Oj6hSdAgACBKgEDXCXvXAIECBCIFjDA0fULT4AAAQJVAga4St65BA4KbH//x/+C3tYfX14OPsrXCRAoEDDABeiOJPAIge1/nrbrc9YfvfodPwLUMwh8sIAf7geDO47AowQM8KMkPYdAjYABrnF3KoHDAgb4MKEHECgVMMCl/A4nsF/AAO+3800CIwgY4BFacAcCOwQM8A40XyEwkIABHqgMVyFwj4ABvkfLZwmMJ2CAx+vEjQjcJGCAb2LyIQLDChjgYatxMQLvCxhgbwiBuQUM8Nz9uX2wgAEOLl/0FgIGuEWNQiQKGODE1mXuJGCAO7UpS5SAAY6qW9iGAga4YakiZQgY4IyepewrYID7ditZcwED3Lxg8doLGOD2FQvYVcAAd21WrhQBA5zStJztBAxwu0oFChMwwGGFi9tHwAD36VKSTAEDnNm71A0EDHCDEkWIFjDA0fULP7OAAZ65PXcnsCwG2FtAYFIBAzxpca5N4E3AAHsVCEwqYIAnLc61CRhg7wCBuQW2v5/O1wTrjy/PcydxewKZAv4CzuxdagIECBAoFjDAxQU4ngABAgQyBQxwZu9SEyBAgECxgAEuLsDxBAgQIJApYIAze5eaAAECBIoFDHBxAY4nsFfg6+103pZl+4/18rL3Gb5HgECdgAGus3cygUMCX29P2/UBv1lf/Y4PSfoygRoBP9wad6cSOCxggA8TegCBUgEDXMrvcAL7BQzwfjvfJDCCgAEeoQV3ILBDwADvQPMVAgMJGOCBynAVAvcIGOB7tHyWwHgCBni8TtyIwE0CBvgmJh8iMKyAAR62Ghcj8L6AAfaGEJhbwADP3Z/bBwsY4ODyRW8hYIBb1ChEooABTmxd5k4CBrhTm7JECRjgqLqFbShggBuWKlKGgAHO6FnKvgIGuG+3kjUXMMDNCxavvYABbl+xgF0FDHDXZuVKETDAKU3L2U7AALerVKAwAQMcVri4fQQMcJ8uJckUMMCZvUvdQMAANyhRhGgBAxxdv/AzCxjgmdtzdwLLYoC9BQQmFTDAkxbn2gTeBAywV4HApAIGeNLiXJuAAfYOEJhbwADP3Z/bE/AXsHeAwKQCX2+n8/Xqv1kvz5NGcG0C0QIGOLp+4QkQIECgSsAAV8k7lwABAgSiBQxwdP3CEyBAgECVgAGukncuAQIECEQLGODo+oUnQIAAgSoBA1wl71wCBwVO22fX/wW9XdbvXg4+ytcJECgQMMAF6I4k8AiBp+2z7fqc1/U7v+NHgHoGgQ8W8MP9YHDHEXiUgAF+lKTnEKgRMMA17k4lcFjAAB8m9AACpQIGuJTf4QT2Cxjg/Xa+SWAEAQM8QgvuQGCHgAHegeYrBAYSMMADleEqBO4RMMD3aPksgfEEDPB4nbgRgZsEDPBNTD5EYFgBAzxsNS5G4H0BA+wNITC3gAGeuz+3DxYwwMHli95CwAC3qFGIRAEDnNi6zJ0EDHCnNmWJEjDAUXUL21DAADcsVaQMAQOc0bOUfQUMcN9uJWsuYICbFyxeewED3L5iAbsKGOCuzcqVImCAU5qWs52AAW5XqUBhAgY4rHBx+wgY4D5dSpIpYIAze5e6gYABblCiCNECBji6fuFnFjDAM7fn7gSWxQB7CwhMKmCAJy3OtQm8CRhgrwKBSQUM8KTFuTYBA+wdIDC3wGn77HxNcFm/e547idsTyBTwF3Bm71ITIECAQLGAAS4uwPEECBAgkClggDN7l5oAAQIEigUMcHEBjidAgACBTAEDnNm71AQIECBQLGCAiwtwPIG9Aqftj+dlWbfL+ouXvc/wPQIE6gQMcJ29kwkcEnja/rRdH/C6/sLv+JCkLxOoEfDDrXF3KoHDAgb4MKEHECgVMMCl/A4nsF/AAO+3800CIwgY4BFacAcCOwQM8A40XyEwkIABHqgMVyFwj4ABvkfLZwmMJ2CAx+vEjQjcJGCAb2LyIQLDChjgYatxMQLvCxhgbwiBuQUM8Nz9uX2wgAEOLl/0FgIGuEWNQiQKGODE1mXuJGCAO7UpS5SAAY6qW9iGAga4YakiZQgY4IyepewrYID7ditZcwED3Lxg8doLGOD2FQvYVcAAd21WrhQBA5zStJztBAxwu0oFChMwwGGFi9tHwAD36VKSTAEDnNm71A0EDHCDEkWIFjDA0fULP7OAAZ65PXcnsCwG2FtAYFIBAzxpca5N4E3AAHsVCEwqYIAnLc61CRhg7wCBuQUM8Nz9uT0BfwF7BwhMKnDa/ni+Xv2y/vJ50giuTSBawABH1y88AQIECFQJGOAqeecSIECAQLSAAY6uX3gCBAgQqBIwwFXyziVAgACBaAEDHF2/8AQIECBQJWCAq+SdS+CgwOlv2/V/QW+Xn6wvBx/l6wQIFAgY4AJ0RxJ4hMDT37bt+pzXn6x+x48A9QwCHyzgh/vB4I4j8CgBA/woSc8hUCPwv7r6maXBOCukAAAAAElFTkSuQmCC</pentrails>
+    <costumes>
+      <list id='2'>
+        <item>
+          <costume center-x='240' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAFoCAYAAACPNyggAAAOi0lEQVR4Xu3VwQkAMAzEsGT/oVvoEPVHWeBABLwzc8YRIECAAAECXwVWgL96GyNAgAABAk9AgD0CAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIEBNgPECBAgACBQECAA3STBAgQIEBAgP0AAQIECBAIBAQ4QDdJgAABAgQE2A8QIECAAIFAQIADdJMECBAgQECA/QABAgQIEAgEBDhAN0mAAAECBATYDxAgQIAAgUBAgAN0kwQIECBAQID9AAECBAgQCAQEOEA3SYAAAQIELmhgaBBRNtU9AAAAAElFTkSuQmCC' center-y='180' name='download' id='3'/>
+        </item>
+      </list>
+    </costumes>
+    <sounds>
+      <list id='4' struct='atomic'/>
+    </sounds>
+    <variables/>
+    <blocks/>
+    <scripts/>
+    <sprites>
+      <sprite x='-64' pen='tip' id='9' y='0' name='Wall 2' idx='2' volume='100' rotation='1' scale='1' heading='90' costume='2' color='2.9070000000000022,145.35,0,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='10'>
+            <item>
+              <costume center-x='176' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAFoCAYAAABueWpYAAAAoklEQVRoQ+3aMRGAMBBE0Z8eA7jABR1WU6GGGayEFhGvp2Igudt9Y601qq06qqs6q716qlnd1Ts86PX4KPwKTgrno1vBpWlUMCAZC03NdgUbkgXS2iwsEJFIkORm0kJhqghZcK5X0KbokDRnikV1qhJZx04W8BQUCWSDFgFVvBllxxYSlUQlUUlUEpVEJVFJVBKVRCVRSVQSlUQlUUlU/kXlB2oO4PgyzZKIAAAAAElFTkSuQmCC' center-y='180' name='Untitled' id='11'/>
+            </item>
+            <item>
+              <costume center-x='176' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAFcCAYAAAAeUETdAAAA2UlEQVRoQ+3bSwrCMBRG4RvIQDJ37lJclLtxM12VEBKo+GgRxehU+TJtBm24Of/JLUkRsY/xmJbHKSLmD5Mvc67jXyefcs7H1trhmw80+bFcrIbVeIcPtaE21IZMiQgogAIogAIoeNoFwAiMwAiMwAiMgzacmBATYkJMiAkxISb8qbnVACtgBayAFUABK2AFrIAVvO4CjsSROBJH4kgciSNxJI7EkQYcEBNiQkyICTEhJsSEW1FrDegj6SPpI+kjOSD8wAFhSimlUsqm976rtW7vl5eXV19hfgbsgBMrUBTnFAAAAABJRU5ErkJggg==' center-y='177' name='Untitled(2)' id='12'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='13' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='30' y='38'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='gotoXY'>
+              <l>-64</l>
+              <l>0</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doIf'>
+                  <block s='reportTouchingObject'>
+                    <l>Ball</l>
+                  </block>
+                  <script>
+                    <block s='doChangeVar'>
+                      <l>Score 2</l>
+                      <l>1</l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <sprite x='404' pen='tip' id='34' y='0' name='Wall' idx='1' volume='100' rotation='1' scale='1' heading='90' costume='2' color='0,130.05,106.64099999999998,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='35'>
+            <item>
+              <costume center-x='176' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAFoCAYAAABueWpYAAAAoklEQVRoQ+3aMRGAMBBE0Z8eA7jABR1WU6GGGayEFhGvp2Igudt9Y601qq06qqs6q716qlnd1Ts86PX4KPwKTgrno1vBpWlUMCAZC03NdgUbkgXS2iwsEJFIkORm0kJhqghZcK5X0KbokDRnikV1qhJZx04W8BQUCWSDFgFVvBllxxYSlUQlUUlUEpVEJVFJVBKVRCVRSVQSlUQlUUlU/kXlB2oO4PgyzZKIAAAAAElFTkSuQmCC' center-y='180' name='Untitled(2)' id='36'/>
+            </item>
+            <item>
+              <costume center-x='180' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAFmCAYAAACleFClAAAAYElEQVRYR+3ZwQnAIAAEwbWzlJ7O4iNggiXI+PR53O0KjupqO6N6XH4JCERDVgLKoAzKUBmCIRiCIXgr/jmAiqiIiqiIiqj4JsAIjMAIhsAIjMAIbMiGbMiGB9rw3v9MJzz0ZRIb9EBlAAAAAElFTkSuQmCC' center-y='178' name='Untitled' id='37'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='38' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='33' y='41'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='gotoXY'>
+              <l>404</l>
+              <l>0</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doIf'>
+                  <block s='reportTouchingObject'>
+                    <l>Ball</l>
+                  </block>
+                  <script>
+                    <block s='doChangeVar'>
+                      <l>Score 1</l>
+                      <l>1</l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <sprite x='0' pen='tip' id='59' y='0' name='Anouncer' idx='6' volume='100' rotation='1' scale='1' heading='90' costume='1' color='2.7030000000000025,135.15,0,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='60'>
+            <item>
+              <costume center-x='1' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAKUlEQVQYVxXHMQ0AIAwAsC78KJiBXfh3MQ1IQAFZvwYWEjdw0KjJ2HgfMjgDLUPR+C8AAAAASUVORK5CYII=' center-y='1' name='Untitled' id='61'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='62' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='33' y='156'>
+            <block s='receiveCondition'>
+              <block s='reportOr'>
+                <block s='reportEquals'>
+                  <block var='Player 1'/>
+                  <l>5</l>
+                </block>
+                <block s='reportEquals'>
+                  <block var='Player 2'/>
+                  <l>5</l>
+                </block>
+              </block>
+            </block>
+            <block s='doIfElse'>
+              <block s='reportEquals'>
+                <block var='Player 1'/>
+                <l>5</l>
+              </block>
+              <script>
+                <block s='doSayFor'>
+                  <l>Player 1 Wins</l>
+                  <l>2</l>
+                </block>
+                <block s='doSetVar'>
+                  <l>Player 1</l>
+                  <l>0</l>
+                </block>
+                <block s='doBroadcast'>
+                  <l>Again?</l>
+                </block>
+              </script>
+              <script>
+                <block s='doIf'>
+                  <block s='reportEquals'>
+                    <block var='Player 2'/>
+                    <l>5</l>
+                  </block>
+                  <script>
+                    <block s='doSayFor'>
+                      <l>Player 2 wins</l>
+                      <l>2</l>
+                    </block>
+                    <block s='doSetVar'>
+                      <l>Player 2</l>
+                      <l>0</l>
+                    </block>
+                    <block s='doBroadcast'>
+                      <l>Again?</l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+          <script x='49' y='473'>
+            <block s='receiveMessage'>
+              <l>Again?</l>
+            </block>
+            <block s='doAsk'>
+              <l>Do you want to play again?</l>
+            </block>
+            <block s='doIfElse'>
+              <block s='reportOr'>
+                <block s='reportEquals'>
+                  <block s='getLastAnswer'/>
+                  <l>Yes</l>
+                </block>
+                <block s='reportOr'>
+                  <block s='reportEquals'>
+                    <block s='getLastAnswer'/>
+                    <l>Okay</l>
+                  </block>
+                  <block s='reportOr'>
+                    <block s='reportEquals'>
+                      <block s='getLastAnswer'/>
+                      <l>Fine</l>
+                    </block>
+                    <block s='reportEquals'>
+                      <block s='getLastAnswer'/>
+                      <l>Sure</l>
+                    </block>
+                  </block>
+                </block>
+              </block>
+              <script>
+                <block s='doBroadcast'>
+                  <l>Again</l>
+                </block>
+              </script>
+              <script>
+                <block s='doStopThis'>
+                  <l>
+                    <option>all</option>
+                  </l>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <sprite x='0' pen='tip' id='148' y='-231.99999999999983' name='Middle Line' idx='7' volume='100' rotation='1' scale='1' heading='180' costume='1' color='40.99999999999999,115.0399999999998,255,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='149'>
+            <item>
+              <costume center-x='1' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAADCAYAAAC56t6BAAAAHElEQVQYV2NkYGAoYGBg+M8IIhgYGBhAjA8gBgAv8ANizUPmIQAAAABJRU5ErkJggg==' center-y='1.5' name='Untitled' id='150'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='151' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='31.999999000000003' y='31.999999000000003'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='clear'/>
+            <block s='setSize'>
+              <l>2</l>
+            </block>
+            <block s='setHeading'>
+              <l>180</l>
+            </block>
+            <block s='gotoXY'>
+              <l>0</l>
+              <l>200</l>
+            </block>
+            <block s='setColor'>
+              <color>252,255,41,1</color>
+            </block>
+            <block s='doRepeat'>
+              <l>16</l>
+              <script>
+                <block s='changePenHSVA'>
+                  <l>
+                    <option>hue</option>
+                  </l>
+                  <l>9</l>
+                </block>
+                <block s='down'/>
+                <block s='forward'>
+                  <l>20</l>
+                </block>
+                <block s='up'/>
+                <block s='forward'>
+                  <l>7</l>
+                </block>
+              </script>
+            </block>
+          </script>
+          <script x='212' y='257'>
+            <block s='reportRandom'>
+              <l>1</l>
+              <l>10</l>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <watcher hidden='true' x='10' s='xPosition' style='normal' color='74,108,212' y='10' scope='Paddle 1'/>
+      <watcher hidden='true' x='10' s='xPosition' style='normal' color='74,108,212' y='31.000001999999995' scope='Paddle 2'/>
+      <watcher hidden='true' x='10' s='yPosition' style='normal' color='74,108,212' y='52.00000399999999' scope='Paddle 2'/>
+      <watcher hidden='true' x='10' s='xPosition' style='normal' color='74,108,212' y='73.00000599999998' scope='Wall'/>
+      <watcher hidden='true' x='10' s='yPosition' style='normal' color='74,108,212' y='94.00000799999998' scope='Wall'/>
+      <watcher hidden='true' x='10' s='xPosition' style='normal' color='74,108,212' y='115.00000999999997' scope='Wall 2'/>
+      <watcher x='10' s='yPosition' style='normal' hidden='true' color='74,108,212' y='136.00001199999997'/>
+      <watcher x='10' s='xPosition' style='normal' hidden='true' color='74,108,212' y='157.000014'/>
+      <watcher x='10' s='xPosition' style='normal' hidden='true' color='74,108,212' y='178.000016'/>
+      <watcher x='10' s='yPosition' style='normal' hidden='true' color='74,108,212' y='199.00001799999998'/>
+      <watcher x='10' s='xPosition' style='normal' hidden='true' color='74,108,212' y='220.00001999999995'/>
+      <watcher x='10' s='yPosition' style='normal' hidden='true' color='74,108,212' y='241.00002199999994'/>
+      <watcher x='10' color='243,118,29' style='normal' hidden='true' y='262.00002399999994' var='Ball speed'/>
+      <watcher x='13' color='243,118,29' style='normal' y='7.000023999999939' var='Player 1'/>
+      <watcher x='370' color='243,118,29' style='normal' y='4.000025999999934' var='Player 2'/>
+      <watcher hidden='true' x='10' s='yPosition' style='normal' color='74,108,212' y='283.00002599999993' scope='Anouncer'/>
+      <watcher hidden='true' x='10' s='xPosition' style='normal' color='74,108,212' y='304.000028' scope='Middle Line'/>
+      <watcher hidden='true' x='10' s='yPosition' style='normal' color='74,108,212' y='325.0000300000001' scope='Middle Line'/>
+      <sprite x='0' pen='tip' id='201' y='2.842170943040401e-14' name='Ball' idx='3' volume='100' rotation='1' scale='1' heading='45' costume='1' color='0,145.35,110.46600000000002,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='202'>
+            <item>
+              <costume center-x='10' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAADP0lEQVQ4T4WV324bVRCHvzlnd20njV1CgpxUELhAFfSChBTxt624QVDueQiegufhCdqKlF4BaslNrVJESFMBpYBEHCduYnv3nEGza8uJ0paxjtY+2vP5p5nfzBH+N1RQBHBABPsl+rxj9vLT42v1rJHQImWRFEjYJ5SfF8ihXMXT/uA0VNX2Mg6YIzJHQpNIM2lQY0BRRAY4+pxhF+gBA0TCcWUnoaqOv2nQYhFY8YHlxNEWZd57ZmNkpMITVbqF42EQdsh4zCYHXBRTXsYU+pU6vmSGJks+cCF1rLrIa0AboekdjRgpFI5w7Ck8KJROrtwlsMMZ9pAKPIX+rg0WWcoiqx4+dMIawhKRFkLmII1CIFoeGaD8E+F+VH4Ywm122eZ7enwhoYKqeqCVHPFGIlx2cBk4L9BSIRPFO/BxXH0FO9hX+E2FOyPh2xDZpM5jRIYTaMYRbe95J1U+8coHCOdUqUllJfwYqmap0lcUonTV0QnwzdBxiwO2mac/gdaBl9OcS2nkqijrCgtiNqpyJAYNUFZ5DDa4FW0rChsDuMGIe1ynJ1QWali1Z3Ku+MjnEllHmBfwBrTlwBns+AIOUX4tYGMYuFb06fAz3Qr6B3VarNQ8V1K4ivC2jqETpSmkeWX4iVL7ciiwbdBcuFbkdJhjT6BswxoHvJJ6LqWez0S5CCxYKk2lgQxaUFpqktMoyiHCVhHZKCI3ih73+K6EAltaY5Fln/FeTfjUwbsqtFEyS6mBE0gMekxpQOkh/JQrGyO4yZBfOMv+1FJ95pOEC0nkYxE+cvA60ETKvncGDVOlEeUJ8EgdPxaRWyPHbWo8sradQO1ZZ8iyj6xm8D6w5sz8Skug7oU0aKnUUjBA+EvhfvCl+e9wxAOapnxi/qoBzI+zjDjnA2+mwlsu8qq1qTjOJpFGEPJobQpdhR0VOgPPXVJ2bO90m047a4YhLyXKigssi6Pt4EVRZlUZqaevgW4hPAxJOVD+BPYRGZ0eKJOdSnGNfjn6mjRoJkNa6qiLJy9G49Hn+JcGe5hykbKAz4ZWii3HNg8SdslIyRiSskBRDuoROQsMx0PaboMT8ezJf1K5sIljvbxOLOLzrpT/ACNjcj6DwxuLAAAAAElFTkSuQmCC' center-y='9' name='Untitled(6)' id='203'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='204' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='23' y='34'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='doSetVar'>
+              <l>Ball speed</l>
+              <l>4</l>
+            </block>
+            <block s='doSetVar'>
+              <l>Player 2</l>
+              <l>0</l>
+            </block>
+            <block s='doSetVar'>
+              <l>Player 1</l>
+              <l>0</l>
+            </block>
+            <block s='gotoXY'>
+              <l>0</l>
+              <l>0</l>
+            </block>
+            <block s='doFaceTowards'>
+              <block s='reportOr'>
+                <block s='reportRandom'>
+                  <l>20</l>
+                  <l>150</l>
+                </block>
+                <block s='reportRandom'>
+                  <l>210</l>
+                  <l>340</l>
+                </block>
+              </block>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='forward'>
+                  <block var='Ball speed'/>
+                </block>
+                <block s='bounceOffEdge'/>
+                <block s='doIfElse'>
+                  <block s='reportTouchingObject'>
+                    <l>Paddle 1</l>
+                  </block>
+                  <script>
+                    <block s='setHeading'>
+                      <block s='reportRandom'>
+                        <l>20</l>
+                        <l>150</l>
+                      </block>
+                    </block>
+                  </script>
+                  <script>
+                    <block s='doIf'>
+                      <block s='reportTouchingObject'>
+                        <l>Paddle 2</l>
+                      </block>
+                      <script>
+                        <block s='setHeading'>
+                          <block s='reportRandom'>
+                            <l>210</l>
+                            <l>340</l>
+                          </block>
+                        </block>
+                      </script>
+                    </block>
+                  </script>
+                </block>
+                <block s='doIfElse'>
+                  <block s='reportTouchingObject'>
+                    <l>Wall 2</l>
+                  </block>
+                  <script>
+                    <block s='gotoXY'>
+                      <l>0</l>
+                      <l>0</l>
+                    </block>
+                    <block s='doSetVar'>
+                      <l>Ball speed</l>
+                      <l>4</l>
+                    </block>
+                    <block s='doChangeVar'>
+                      <l>Player 2</l>
+                      <l>1</l>
+                    </block>
+                  </script>
+                  <script>
+                    <block s='doIf'>
+                      <block s='reportTouchingObject'>
+                        <l>Wall</l>
+                      </block>
+                      <script>
+                        <block s='gotoXY'>
+                          <l>0</l>
+                          <l>0</l>
+                        </block>
+                        <block s='doSetVar'>
+                          <l>Ball speed</l>
+                          <l>4</l>
+                        </block>
+                        <block s='doChangeVar'>
+                          <l>Player 1</l>
+                          <l>1</l>
+                        </block>
+                      </script>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+          <script x='455' y='37'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doIfElse'>
+                  <block s='reportTouchingObject'>
+                    <l>Paddle 1</l>
+                  </block>
+                  <script>
+                    <block s='doChangeVar'>
+                      <l>Ball speed</l>
+                      <l>.5</l>
+                    </block>
+                  </script>
+                  <script>
+                    <block s='doIf'>
+                      <block s='reportTouchingObject'>
+                        <l>Paddle 2</l>
+                      </block>
+                      <script>
+                        <block s='doChangeVar'>
+                          <l>Ball speed</l>
+                          <l>.5</l>
+                        </block>
+                      </script>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+          <script x='687.000001' y='40.83333433333337'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doIf'>
+                  <block s='reportOr'>
+                    <block s='reportEquals'>
+                      <block var='Player 1'/>
+                      <l>5</l>
+                    </block>
+                    <block s='reportEquals'>
+                      <block var='Player 2'/>
+                      <l>5</l>
+                    </block>
+                  </block>
+                  <script>
+                    <block s='doStopThis'>
+                      <l>
+                        <option>other scripts in sprite</option>
+                      </l>
+                    </block>
+                    <block s='doStopThis'>
+                      <l>
+                        <option>this script</option>
+                      </l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+          <script x='459' y='272'>
+            <block s='receiveGo'/>
+            <block s='doAsk'>
+              <l>Do you want to play?</l>
+            </block>
+            <block s='doIfElse'>
+              <block s='reportOr'>
+                <block s='reportEquals'>
+                  <block s='getLastAnswer'/>
+                  <l>Yes</l>
+                </block>
+                <block s='reportOr'>
+                  <block s='reportEquals'>
+                    <block s='getLastAnswer'/>
+                    <l>Okay</l>
+                  </block>
+                  <block s='reportOr'>
+                    <block s='reportEquals'>
+                      <block s='getLastAnswer'/>
+                      <l>Fine</l>
+                    </block>
+                    <block s='reportEquals'>
+                      <block s='getLastAnswer'/>
+                      <l>Sure</l>
+                    </block>
+                  </block>
+                </block>
+              </block>
+              <script>
+                <block s='doSayFor'>
+                  <l>Player 1 will use the controls W and S</l>
+                  <l>2</l>
+                </block>
+                <block s='doSayFor'>
+                  <l>Player 2 will use the controls Up and Down</l>
+                  <l>2</l>
+                </block>
+                <block s='doBroadcast'>
+                  <l>Again</l>
+                </block>
+              </script>
+              <script>
+                <block s='doStopThis'>
+                  <l>
+                    <option>all</option>
+                  </l>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <sprite x='-220' pen='tip' id='386' y='-17.999999999999943' name='Paddle 1' idx='4' volume='100' rotation='1' scale='1' heading='90' costume='1' color='206.55,0,0,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='387'>
+            <item>
+              <costume center-x='4.5' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAABDCAYAAABOUi8aAAAANUlEQVRIS2P8//+/AwMBwPj/////o4pGg2A0FYxmhNGyYLQ4ZBgNgtEgYBgNAmoHwQFCjSwAmDgKSStwzN8AAAAASUVORK5CYII=' center-y='33.5' name='Untitled' id='388'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='389' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='49' y='34'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='gotoXY'>
+              <l>-220</l>
+              <l>0</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doUntil'>
+                  <block s='reportNot'>
+                    <block s='reportKeyPressed'>
+                      <l>
+                        <option>s</option>
+                      </l>
+                    </block>
+                  </block>
+                  <script>
+                    <block s='changeYPosition'>
+                      <l>-6</l>
+                    </block>
+                  </script>
+                </block>
+                <block s='doUntil'>
+                  <block s='reportNot'>
+                    <block s='reportKeyPressed'>
+                      <l>
+                        <option>w</option>
+                      </l>
+                    </block>
+                  </block>
+                  <script>
+                    <block s='changeYPosition'>
+                      <l>6</l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+      <sprite x='220' pen='tip' id='421' y='23.999999999999716' name='Paddle 2' idx='5' volume='100' rotation='1' scale='1' heading='90' costume='1' color='136.98599999999993,0,201.45000000000002,1' pan='0' draggable='false'>
+        <costumes>
+          <list id='422'>
+            <item>
+              <costume center-x='5' image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAABDCAYAAABOUi8aAAAAOUlEQVRIS2P8////fAYCgPH/////RxWNBsFoKhjNCKNlwWhxyDAaBKNBwDAaBCQEwX1i2k8HCCkCACYpCojYgGs/AAAAAElFTkSuQmCC' center-y='33' name='Untitled' id='423'/>
+            </item>
+          </list>
+        </costumes>
+        <sounds>
+          <list id='424' struct='atomic'/>
+        </sounds>
+        <blocks/>
+        <variables/>
+        <scripts>
+          <script x='45' y='40'>
+            <block s='receiveMessage'>
+              <l>Again</l>
+            </block>
+            <block s='gotoXY'>
+              <l>220</l>
+              <l>0</l>
+            </block>
+            <block s='doForever'>
+              <script>
+                <block s='doUntil'>
+                  <block s='reportNot'>
+                    <block s='reportKeyPressed'>
+                      <l>
+                        <option>down arrow</option>
+                      </l>
+                    </block>
+                  </block>
+                  <script>
+                    <block s='changeYPosition'>
+                      <l>-6</l>
+                    </block>
+                  </script>
+                </block>
+                <block s='doUntil'>
+                  <block s='reportNot'>
+                    <block s='reportKeyPressed'>
+                      <l>
+                        <option>up arrow</option>
+                      </l>
+                    </block>
+                  </block>
+                  <script>
+                    <block s='changeYPosition'>
+                      <l>6</l>
+                    </block>
+                  </script>
+                </block>
+              </script>
+            </block>
+          </script>
+        </scripts>
+      </sprite>
+    </sprites>
+  </stage>
+  <hidden/>
+  <headers/>
+  <code/>
+  <blocks/>
+  <variables>
+    <variable name='Ball speed'>
+      <l>4</l>
+    </variable>
+    <variable name='Player 1'>
+      <l>0</l>
+    </variable>
+    <variable name='Player 2'>
+      <l>0</l>
+    </variable>
+  </variables>
+</project><media name="Pong Thingy" app="Snap! 5.1, http://snap.berkeley.edu" version="1"></media></snapdata>
